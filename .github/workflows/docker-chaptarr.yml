@@ -40,7 +40,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          platforms: linux/amd64
+          platforms: linux/amd64 
 
           build-args: |
             COMMIT_TAG=${{ github.sha }}
