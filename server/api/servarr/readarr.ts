@@ -155,7 +155,7 @@ class ReadarrAPI extends ServarrBase<{ bookId: number }> {
     try {
       const newBookId = id;
       const response = await this.axios.get<ReadarrBook[]>('/book/lookup', {
-        params: { term: `work:${newBookId}` },
+        params: { term: `hc:${newBookId}` },
       });
       const data = response.data;
 
@@ -381,7 +381,7 @@ class ReadarrAPI extends ServarrBase<{ bookId: number }> {
   }) => {
     if (hcId) {
       this.removeCache('/book/lookup', {
-        term: `work:${hcId}`,
+        term: `hc:${hcId}`,
       });
     }
     if (externalId) {
