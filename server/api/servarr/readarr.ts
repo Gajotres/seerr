@@ -192,7 +192,7 @@ class ReadarrAPI extends ServarrBase<{ bookId: number }> {
     options: ReadarrBookOptions
   ): Promise<ReadarrBook> => {
     try {
-      const newAuthorId = options.authorHcId.toString();
+      const newAuthorId = `hc:${options.authorHcId}`;
       const book = await this.getBookByHcId(options.hcId);
 
       if (book.grabbed) {
